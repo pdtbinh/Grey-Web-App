@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+<h1>Welcome Home</h1>
+<ul>
+    <% for (const project of assignedProjects) { %>
+        <li style="padding: 10px;">
+            <div>
+                <% const user = project.userID %> 
+                <p>
+                    <a href="projects/<%= project._id %>">
+                        <%= project.name %>
+                    </a> by 
+                    <a href="/users/<%= user._id %>/achievements">
+                        <%= user.firstName %> <%= user.lastName %>
+                    </a> 
+                </p> 
+                <div>
+                    <span style="padding-right: 10px;">
+                        <span><%= project.nofLikes %></span>
+                        <span> Likes</span>
+                    </span>
+                    <span style="padding: 10px;">
+                        <span><%= project.nofComments %></span>
+                        <span> Comments</span>
+                    </span>
+                </div>
+            </div>
+        </li>
+    <% } %>  
+</ul>

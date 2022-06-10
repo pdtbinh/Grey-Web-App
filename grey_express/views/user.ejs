@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<% layout('layouts/boilerplate') %>
+<h1>User profile</h1>
+
+<h2>Name:</h2>
+<p><%= user.firstName %> <%= user.lastName %></p>
+
+<h2>Projects:</h2>
+<ul>
+    <% for (const project of user.projects) { %> 
+        <li style="padding: 10px;">
+            <a href="/projects/<%= project._id %>">
+                <%= project.name %>
+            </a>
+        </li>
+    <% } %> 
+</ul>
+
+<form action="/projects/add" method="GET">
+    <button>Add Project</button>
+</form>

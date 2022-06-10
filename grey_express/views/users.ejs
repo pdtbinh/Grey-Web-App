@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %>
+<h1>View all users</h1>
+<ul>
+    <% for (const user of users) { %>
+        <li>
+            <div>
+                <p>
+                    <a href="/users/<%= user._id %>/achievements">
+                        <%= user.firstName %> <%= user.lastName %>
+                    </a> 
+                </p> 
+            </div>
+        </li>
+    <% } %>  
+</ul>

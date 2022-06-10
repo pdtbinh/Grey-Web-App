@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate') %>
+<form action="/projects/add" method="POST">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="project[name]" id="name">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <textarea name="project[description]" id="description" cols="30" rows="5"></textarea>
+    </div>
+    <button>Add</button>
+</form>
